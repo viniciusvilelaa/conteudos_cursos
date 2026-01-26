@@ -12,7 +12,7 @@ let scrollAnimais = menuAnimais.scrollHeight; // height do objeto + height do sc
 let section = document.querySelector(".animais");
 
 //Distancia entre o elemento e o topo da página
-section.offsetTop; 
+section.offsetTop;
 
 //OFFSETLEFT distancia entre parte esquerda do elemento e o canto esquerdo da página
 let primeiroh2 = document.querySelector('h2');
@@ -44,9 +44,9 @@ window.innerHeight // Retorna a altura
 
 let windowSize = window.matchMedia("(width <= 600px");
 
-if(windowSize.matches){
+if (windowSize.matches) {
   console.log("A tela esta em 600px");
-} else{
+} else {
   console.log("A tela é maior que 600");
 };
 
@@ -59,15 +59,21 @@ let firstImg = document.querySelector('img');
 console.log(`Distancia da primeira imagem ao topo é ${firstImg.offsetTop}`);
 
 // Retorne a soma da largura de todas as imagens
-let listaImagens = document.querySelectorAll('img');
-let somaLargura = 0;
 
-listaImagens.forEach((item) => {
-  const rectItem = item.getBoundingClientRect();
-  somaLargura += rectItem.width;
-});
+function somaLarguraImgs() {
+  let listaImagens = document.querySelectorAll('img');
+  let somaLargura = 0;
 
-console.log(`A soma das larguras das imagens é: ${somaLargura}`);
+  listaImagens.forEach((item) => {
+    const rectItem = item.getBoundingClientRect();
+    somaLargura += rectItem.width;
+  });
+
+  console.log(`A soma das larguras das imagens é: ${somaLargura}`);
+};
+
+somaLarguraImgs();
+
 
 // Verifique se os links da página possuem
 // o mínimo recomendado para telas utilizadas
@@ -78,9 +84,9 @@ let listaLinks = document.querySelectorAll('a');
 listaLinks.forEach((item) => {
   const rectItem = item.getBoundingClientRect();
 
-  if(rectItem.width >= 48 && rectItem.height >= 48){
+  if (rectItem.width >= 48 && rectItem.height >= 48) {
     console.log(item, 'Possui acessibilidade');
-  }else{
+  } else {
     console.log(item, 'Nao possui acessibilidade')
   }
 });
@@ -92,7 +98,7 @@ let is720 = window.matchMedia("(width <= 720px)").matches;
 
 let menuNav = document.querySelector('.menu');
 
-if(is720){
+if (is720) {
   menuNav.classList.toggle("menu-mobile");
   console.log("classe mobile adicinada ao menu")
 };
