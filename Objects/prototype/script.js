@@ -76,4 +76,4 @@ li.click(); //Undefined
 
 
 // Qual o construtor do dado abaixo:
-li.hidden.constructor.name; //String
+li.hidden.constructor.name; //Stringx
